@@ -1,0 +1,35 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <label>
+    ID:
+    <br>
+    <input type="text" formControlName="id">
+  </label>
+  <br>
+  <label>
+    Name:
+    <br>
+    <input type="text" formControlName="name">
+  </label>
+  <br>
+  <label>
+    Age:
+    <br>
+    <input type="text" formControlName="age">
+  </label>
+  <br>
+  <label>
+    Gender:
+    <br>
+    <input type="text" formControlName="sex">
+  </label>
+  <br>
+  <label>
+    Address:
+    <br>
+    <input type="text" formControlName="address">
+  </label>
+  <br>
+  <input type="file" formControlName="avatar" (change)="onFileSelected($event)">
+  <br>
+  <button type="submit" [disabled]="!employeeForm.valid">Dang Ky</button>
+</form>

@@ -1,0 +1,33 @@
+<p>employees works!</p>
+
+<table border = "1" style="border-collapse: collapse;">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Address</th>
+    <th>Gender</th>
+    <th>Avatar</th>
+    <th>Date</th>
+    <th>Delete-Edit</th>
+    <th>Xoa nhieu</th>
+  </tr>
+  <tr *ngFor="let l of listemployees">
+    <td>{{l.id}}</td>
+    <td>{{l.name}}</td>
+    <td>{{l.age}}</td>
+    <td>{{l.address}}</td>
+    <td>{{l.sex}}</td>
+    <td><img src="{{ l.avatar }}" alt="Avatar" width="50" height="50"></td>
+    <td>{{l.date}}</td>
+    <td>
+      <button class = "btn btn" (click)="deleteEmployee(l.id)">Xoa</button>
+      <button class = "btn btn" (click)="editEmployee(l.id)">Sua</button>
+    </td>
+    <td><input type="checkbox"></td>
+  </tr>
+</table>
+<button>Delete Selected Employees</button>
+<button (click)="addEmployee()">Them nhan vien</button>
+<br>
+<a routerLink="">Back</a>
